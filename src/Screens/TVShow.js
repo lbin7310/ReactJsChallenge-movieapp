@@ -34,6 +34,8 @@ export default () => {
         onTheAir.map(show => 
           <Poster 
             key={show.id}
+            isMovie={false}
+            id={show.id}
             posterUrl={show.poster_path}
             grade={show.vote_average}
             title={show.original_name}
@@ -45,6 +47,8 @@ export default () => {
         popular.map(show => 
           <Poster 
             key={show.id}
+            isMovie={false}
+            id={show.id}
             posterUrl={show.poster_path}
             grade={show.vote_average}
             title={show.original_name}

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   position: relative;
@@ -18,7 +19,7 @@ const Grade = styled.div`
   bottom: 5px;
   left: 5px;
   opacity: 0;
-  transition: opacity 0.5s linear;
+  transition: opacity 0.1s linear;
   font-size: 12px;
 `;
 
@@ -29,7 +30,7 @@ const Title = styled.div`
 
 const Year = styled.div `
   font-size: 12px;
-  opacity: 0.5;
+  opacity: 0.1s linear;
 `;
 
 const ImageContainer = styled.div`
@@ -49,17 +50,19 @@ const ImageContainer = styled.div`
 const Content = styled.div`
 `;
 
-const Poster = ({title, grade, year, posterUrl}) => (
-  <Container>
-    <ImageContainer>
-      <Image posterUrl={`https://image.tmdb.org/t/p/w300${posterUrl}`}/>
-      <Grade><span role="img" aria-label="Star"> ⭐️</span>{grade} / 10</Grade>
-    </ImageContainer>
-    <Content>
-      <Title>{title.length > 18 ? `${title.substring(0, 18)}...` : title}</Title>
-      <Year>{year}</Year>
-    </Content>
-  </Container>
+const Poster = ({id, title, grade, year, posterUrl, isMovie}) => (
+  <Link to={isMovie ? `/movie/${id}` : `/tv/${id}`} >
+    <Container>
+      <ImageContainer>
+        <Image posterUrl={`https://image.tmdb.org/t/p/w300${posterUrl}`}/>
+        <Grade><span role="img" aria-label="Star"> ⭐️</span>{grade} / 10</Grade>
+      </ImageContainer>
+      <Content>
+        <Title>{title.length > 18 ? `${title.substring(0, 18)}...` : title}</Title>
+        <Year>{year}</Year>
+      </Content>
+    </Container>
+  </Link>
 )
 
 export default Poster;

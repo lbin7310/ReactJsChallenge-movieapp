@@ -39,7 +39,7 @@ export default withRouter(({location: {pathname}} ) => (
    <Header>
     <List>
       <Item isSelected={pathname==="/"}><SLink to="/">Movies</SLink></Item>
-      <Item isSelected={pathname==="/tvshow"}><SLink to="/tvshow">TV Show</SLink></Item>
+      <Item isSelected={pathname==="/tv"}><SLink to="/tv">TV Show</SLink></Item>
       <Item isSelected={pathname==="/search"}><SLink to="/search">Search</SLink></Item>
     </List>
   </Header>

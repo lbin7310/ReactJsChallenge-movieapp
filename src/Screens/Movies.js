@@ -34,6 +34,8 @@ export default () => {
         movies.map(movie => 
           <Poster 
             key={movie.id}
+            isMovie={true}
+            id={movie.id}
             posterUrl={movie.poster_path}
             grade={movie.vote_average}
             title={movie.title}
@@ -45,6 +47,8 @@ export default () => {
         popular.map(movie => 
           <Poster 
             key={movie.id}
+            isMovie={true}
+            id={movie.id}
             posterUrl={movie.poster_path}
             grade={movie.vote_average}
             title={movie.title}
